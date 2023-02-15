@@ -214,6 +214,7 @@ class FlutterDownloaderPlugin : MethodChannel.MethodCallHandler, FlutterPlugin {
             item["saved_dir"] = task.savedDir
             item["time_created"] = task.timeCreated
             item["allow_cellular"] = task.allowCellular
+            item["headers"] = task.headers
             array.add(item)
         }
         result.success(array)

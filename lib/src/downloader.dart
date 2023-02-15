@@ -162,6 +162,9 @@ class FlutterDownloader {
             filename: item['file_name'] as String?,
             savedDir: item['saved_dir'] as String,
             timeCreated: item['time_created'] as int,
+            headers: item['headers'] != null
+                ? Map<String, String>.from(jsonDecode(item['headers']) as Map)
+                : Map<String, String>(),
 
             // allowCellular field is true by default (similar to enqueue())
             allowCellular: (item['allow_cellular'] as bool?) ?? true,
@@ -222,6 +225,7 @@ class FlutterDownloader {
             filename: item['file_name'] as String?,
             savedDir: item['saved_dir'] as String,
             timeCreated: item['time_created'] as int,
+            headers: item['headers'] as Map<String, String>,
 
             // allowCellular field is true by default (similar to enqueue())
             allowCellular: (item['allow_cellular'] as bool?) ?? true,
